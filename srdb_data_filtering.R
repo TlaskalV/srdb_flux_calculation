@@ -17,7 +17,7 @@ srdb_table_temperate_forests <- tbl_df(srdb_table) %>%
   filter(Ecosystem_type == "Forest") %>%  
   drop_na(Rs_annual) %>% # omit NA in annual Rs
   group_by(Biome) %>%
-  summarise(median_g_C_m_yr = median(Rs_annual), mean_g_C_m_yr = mean(Rs_annual), sd = sd(Rs_annual), n = n()) %>% 
+  summarise(median_g_C_m_yr = median(Rs_annual), mean_g_C_m_yr = mean(Rs_annual), sd = sd(Rs_annual), n = n(), se = (sd/sqrt(n))) %>% 
   mutate(median_Mg_C_ha_yr = median_g_C_m_yr/100, mean_Mg_C_ha_yr = mean_g_C_m_yr/100) %>% 
   print
   
