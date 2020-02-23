@@ -1,6 +1,7 @@
 library(readr)
 library(RCurl)
 library(tidyverse)
+library("tidylog", warn.conflicts = FALSE)
 
 # download 20191022, 
 # commit 8df6b9e394bb0f8c44a62e535ec9c09836756b46
